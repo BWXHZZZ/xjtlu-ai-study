@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Integration at XJTLU — Experimental Study Design</title>
+<style>
+  :root{
+    --purple:#5b2d8e; --purple-light:#f3eefb; --ink:#1f2430; --muted:#5c6472;
+    --line:#e4e1ec; --bg:#ffffff; --card:#faf9fd; --accent:#8f5fd0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:"Segoe UI","Helvetica Neue",Arial,sans-serif;color:var(--ink);
+       background:var(--bg);line-height:1.65}
+  .wrap{max-width:960px;margin:0 auto;padding:0 24px}
+
+  header{background:linear-gradient(135deg,#3d1c66 0%,#5b2d8e 55%,#7a45b5 100%);
+         color:#fff;padding:56px 0 44px}
+  header .tag{display:inline-block;background:rgba(255,255,255,.15);
+         border:1px solid rgba(255,255,255,.35);border-radius:999px;
+         padding:4px 14px;font-size:13px;letter-spacing:.5px;margin-bottom:16px}
+  header h1{font-size:34px;font-weight:700;line-height:1.25;margin-bottom:10px}
+  header p{color:#e6dcf5;max-width:680px;font-size:16px}
+
+  nav{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:10}
+  nav .wrap{display:flex;gap:22px;overflow-x:auto;padding-top:12px;padding-bottom:12px}
+  nav a{white-space:nowrap;font-size:14px;color:var(--muted);text-decoration:none}
+  nav a:hover{color:var(--purple)}
+
+  section{padding:44px 0 8px}
+  h2{font-size:24px;color:var(--purple);margin-bottom:6px;display:flex;align-items:baseline;gap:10px}
+  h2 .num{font-size:14px;background:var(--purple-light);color:var(--purple);
+          border-radius:8px;padding:3px 10px;font-weight:600}
+  h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+  p.lead{color:var(--muted);margin-bottom:14px}
+  ul,ol{margin:10px 0 10px 22px}
+  li{margin-bottom:6px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;
+        padding:20px 22px;margin:16px 0}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:720px){.grid2{grid-template-columns:1fr}}
+  .kpi{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0}
+  .kpi div{flex:1;min-width:140px;background:var(--purple-light);border-radius:10px;
+        padding:12px 16px;text-align:center}
+  .kpi b{display:block;font-size:20px;color:var(--purple)}
+  .kpi span{font-size:13px;color:var(--muted)}
+
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+  th,td{border:1px solid var(--line);padding:10px 14px;text-align:left;vertical-align:top}
+  th{background:var(--purple-light);color:var(--purple);font-weight:600}
+  caption{caption-side:top;text-align:left;font-weight:600;margin-bottom:8px;color:var(--ink)}
+
+  figure{margin:22px 0;background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px}
+  figcaption{font-size:13.5px;color:var(--muted);margin-top:10px;text-align:center}
+  svg text{font-family:"Segoe UI","Helvetica Neue",Arial,sans-serif}
+
+  footer{margin-top:56px;border-top:1px solid var(--line);padding:26px 0 40px;
+         color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <span class="tag">Group Project · Research Methods</span>
+    <h1>AI Integration at XJTLU<br>Experimental Study Design</h1>
+    <p>How do different modes of AI assistance and prompt-literacy training affect students' academic writing performance, cognitive load, and attitudes toward AI at XJTLU?</p>
+  </div>
+</header>
+
+<nav>
+  <div class="wrap">
+    <a href="#overview">Overview</a>
+    <a href="#formative">1 · Formative Study</a>
+    <a href="#participants">2 · Participants</a>
+    <a href="#ivs">3–4 · Independent Variables &amp; Design</a>
+    <a href="#dvs">5 · Dependent Variables</a>
+    <a href="#baseline">6 · Baseline</a>
+    <a href="#procedure">7 · Procedure</a>
+    <a href="#figures">8–9 · Figures</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<!-- ============ OVERVIEW ============ -->
+<section id="overview">
+  <h2>Project Overview</h2>
+  <p class="lead">Generative AI tools are already part of everyday study life at XJTLU. Our project investigates not <em>whether</em> students use AI, but <em>how AI should be integrated</em> into learning so that it improves outcomes without increasing dependency or cognitive overload.</p>
+  <div class="kpi">
+    <div><b>2 × 2</b><span>factorial design<br>+ 1 baseline group</span></div>
+    <div><b>100</b><span>XJTLU participants<br>(20 per condition)</span></div>
+    <div><b>60 min</b><span>lab session<br>+ 1-week follow-up</span></div>
+    <div><b>2 weeks</b><span>total study<br>duration</span></div>
+  </div>
+</section>
+
+<!-- ============ Q1 ============ -->
+<section id="formative">
+  <h2><span class="num">Q1</span>Do we need a formative study?</h2>
+  <p class="lead"><strong>Yes.</strong> Before running the experiment we will run a small formative study, for three reasons:</p>
+  <ol>
+    <li><strong>Ground the task in reality.</strong> A short survey (~80 students) plus 5–6 semi-structured interviews with students and language instructors will tell us which AI tools (e.g. ChatGPT, ERNIE Bot, Copilot) students actually use for academic writing, and for what.</li>
+    <li><strong>Calibrate task difficulty.</strong> A pilot of the writing task with 4–6 students ensures the task is challenging but completable in 25 minutes, and that our rubric produces reliable scores.</li>
+    <li><strong>Identify confounds early.</strong> Prior AI experience and English proficiency vary widely at XJTLU; the formative study tells us what to measure and control for in randomisation.</li>
+  </ol>
+</section>
+
+<!-- ============ Q2 ============ -->
+<section id="participants">
+  <h2><span class="num">Q2</span>Participants and tasks</h2>
+  <div class="grid2">
+    <div class="card">
+      <h3 style="margin-top:0">Who</h3>
+      <ul>
+        <li><strong>100 XJTLU undergraduate students</strong> (Year 1–3), recruited via campus posters and course announcements.</li>
+        <li>Mixed disciplines and both Chinese and international students, reflecting XJTLU's population.</li>
+        <li>Screened for English writing proficiency (self-report + pre-test) and prior AI usage, used as covariates.</li>
+        <li>Randomly assigned to one of five conditions (20 per group).</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">What they do</h3>
+      <ul>
+        <li><strong>Main task:</strong> write a 300-word argumentative essay in English on a campus-relevant topic (e.g. "Should attendance be mandatory at XJTLU?").</li>
+        <li><strong>Supporting tasks:</strong> pre-test of topic knowledge, post-task questionnaires (cognitive load, trust, satisfaction), and a delayed retention quiz one week later.</li>
+        <li>Depending on condition, they work with a free-form AI chatbot, a guided AI tutor, or no AI at all.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Q3 + Q4 ============ -->
+<section id="ivs">
+  <h2><span class="num">Q3</span>Two independent variables</h2>
+  <p class="lead">If asked to design the study with two independent variables, we select the two factors that matter most for real AI-integration policy at XJTLU:</p>
+  <table>
+    <tr><th style="width:26%">Variable</th><th>Level A</th><th>Level B</th><th style="width:34%">Why it matters</th></tr>
+    <tr>
+      <td><strong>IV1 — AI assistance mode</strong></td>
+      <td>Free-form AI chatbot<br>(open prompting, like ChatGPT)</td>
+      <td>Guided AI tutor<br>(scaffolded, Socratic prompts; gives hints not answers)</td>
+      <td>Tests whether <em>how</em> AI is integrated (open tool vs. pedagogically designed tutor) changes learning outcomes.</td>
+    </tr>
+    <tr>
+      <td><strong>IV2 — Prompt-literacy training</strong></td>
+      <td>10-minute training on effective prompting before the task</td>
+      <td>No training</td>
+      <td>Tests whether a light-weight, scalable intervention (prompt training) is enough to unlock AI benefits — directly relevant to whether XJTLU should teach AI literacy.</td>
+    </tr>
+  </table>
+
+  <h2 style="margin-top:34px"><span class="num">Q4</span>Between, within, or mixed?</h2>
+  <p class="lead"><strong>Fully between-group</strong> design with a 2 × 2 factorial structure, giving <strong>4 experimental conditions</strong>, plus a fifth <strong>no-AI baseline group</strong> (see Q6):</p>
+  <ul>
+    <li><strong>Why between-group:</strong> the writing task has strong learning and carryover effects — a student who has written the essay once cannot "unlearn" it, so within-group comparison is not feasible without changing the task itself.</li>
+    <li><strong>Why factorial:</strong> it lets us estimate the <em>interaction</em> — e.g. prompt training may only help with the free-form chatbot, while the guided tutor already embeds good prompting behaviour.</li>
+    <li><strong>Conditions (5 total):</strong> C1 free-form + training · C2 free-form + no training · C3 guided tutor + training · C4 guided tutor + no training · C5 no-AI baseline.</li>
+  </ul>
+</section>
+
+<!-- ============ Q5 ============ -->
+<section id="dvs">
+  <h2><span class="num">Q5</span>Dependent variables — what we care about</h2>
+  <p class="lead">What we ultimately care about is whether AI integration makes students <em>learn and perform better</em>, not just finish faster. We measure four families of outcomes:</p>
+  <table>
+    <tr><th style="width:24%">DV family</th><th>Measure</th><th style="width:30%">Instrument</th></tr>
+    <tr><td><strong>Performance</strong></td><td>Essay quality score (content, structure, argumentation, language)</td><td>Double-blind rubric grading by two raters (inter-rater reliability reported)</td></tr>
+    <tr><td><strong>Learning</strong></td><td>Knowledge retention and transfer</td><td>Pre-test vs. 1-week delayed quiz on argumentation skills</td></tr>
+    <tr><td><strong>Process</strong></td><td>Time on task; number of AI prompts; cognitive load</td><td>System logs; NASA-TLX questionnaire</td></tr>
+    <tr><td><strong>Attitudes</strong></td><td>Trust in AI, perceived usefulness, satisfaction, intention to use</td><td>Post-task Likert-scale questionnaire</td></tr>
+  </table>
+</section>
+
+<!-- ============ Q6 ============ -->
+<section id="baseline">
+  <h2><span class="num">Q6</span>What makes a good baseline condition?</h2>
+  <p class="lead">A good baseline isolates the effect of the treatment while keeping everything else identical. Ours is the <strong>C5 no-AI control group</strong>:</p>
+  <ul>
+    <li>Same room, same time limit, same essay topic, same computer — but with <strong>no AI tool available</strong> (standard text editor only).</li>
+    <li>It answers the fundamental policy question: <em>is AI integration better than what we do now?</em> Without this anchor, a difference between C1–C4 would only compare AI tools against each other.</li>
+    <li>To keep it fair, C5 participants also complete the pre-test and all questionnaires, so every measurement is comparable across all five groups.</li>
+  </ul>
+</section>
+
+<!-- ============ Q7 ============ -->
+<section id="procedure">
+  <h2><span class="num">Q7</span>Experimental procedure and duration</h2>
+  <div class="card">
+    <h3 style="margin-top:0">Main session (60 minutes, in a computer lab)</h3>
+    <ol>
+      <li><strong>Consent &amp; demographics</strong> — 5 min</li>
+      <li><strong>Pre-test</strong> — topic knowledge &amp; argumentation skills, 10 min</li>
+      <li><strong>Intervention</strong> — prompt-literacy training for trained groups (10 min); untrained groups get a neutral filler activity</li>
+      <li><strong>Writing task</strong> — 25 min, with the assigned AI condition (or none)</li>
+      <li><strong>Post-questionnaires</strong> — NASA-TLX, trust, satisfaction — 10 min</li>
+    </ol>
+    <h3>Follow-up</h3>
+    <ul>
+      <li><strong>+1 week:</strong> 10-minute online retention quiz to measure lasting learning rather than short-term output.</li>
+    </ul>
+    <h3>Timeline</h3>
+    <ul>
+      <li><strong>Week 0:</strong> formative study &amp; pilot · <strong>Week 1:</strong> all lab sessions · <strong>Week 2:</strong> follow-up quiz, grading, and analysis. Total ≈ <strong>2 weeks</strong> of data collection.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ Q8 + Q9 FIGURES ============ -->
+<section id="figures">
+  <h2><span class="num">Q8</span>Visualising the experimental conditions</h2>
+  <figure>
+    <svg viewBox="0 0 680 430" width="100%" role="img" aria-label="2 by 2 factorial design matrix plus baseline">
+      <!-- axis labels -->
+      <text x="390" y="30" text-anchor="middle" font-size="15" font-weight="700" fill="#5b2d8e">IV2 · Prompt-literacy training</text>
+      <text x="26" y="215" text-anchor="middle" font-size="15" font-weight="700" fill="#5b2d8e" transform="rotate(-90 26 215)">IV1 · AI assistance mode</text>
+
+      <!-- column headers -->
+      <rect x="240" y="48" width="190" height="40" rx="10" fill="#efe7f9"/>
+      <text x="335" y="73" text-anchor="middle" font-size="14" font-weight="600" fill="#3d1c66">With training</text>
+      <rect x="450" y="48" width="190" height="40" rx="10" fill="#efe7f9"/>
+      <text x="545" y="73" text-anchor="middle" font-size="14" font-weight="600" fill="#3d1c66">No training</text>
+
+      <!-- row headers -->
+      <rect x="60" y="110" width="150" height="120" rx="10" fill="#efe7f9"/>
+      <text x="135" y="162" text-anchor="middle" font-size="14" font-weight="600" fill="#3d1c66">Free-form AI</text>
+      <text x="135" y="184" text-anchor="middle" font-size="12.5" fill="#5c6472">(chatbot)</text>
+      <rect x="60" y="250" width="150" height="120" rx="10" fill="#efe7f9"/>
+      <text x="135" y="302" text-anchor="middle" font-size="14" font-weight="600" fill="#3d1c66">Guided AI tutor</text>
+      <text x="135" y="324" text-anchor="middle" font-size="12.5" fill="#5c6472">(scaffolded)</text>
+
+      <!-- cells -->
+      <g>
+        <rect x="240" y="110" width="190" height="120" rx="10" fill="#ffffff" stroke="#8f5fd0" stroke-width="2"/>
+        <text x="335" y="150" text-anchor="middle" font-size="15" font-weight="700" fill="#5b2d8e">C1</text>
+        <text x="335" y="174" text-anchor="middle" font-size="12.5" fill="#1f2430">Chatbot + training</text>
+        <text x="335" y="196" text-anchor="middle" font-size="12" fill="#5c6472">n = 20</text>
+
+        <rect x="450" y="110" width="190" height="120" rx="10" fill="#ffffff" stroke="#8f5fd0" stroke-width="2"/>
+        <text x="545" y="150" text-anchor="middle" font-size="15" font-weight="700" fill="#5b2d8e">C2</text>
+        <text x="545" y="174" text-anchor="middle" font-size="12.5" fill="#1f2430">Chatbot only</text>
+        <text x="545" y="196" text-anchor="middle" font-size="12" fill="#5c6472">n = 20</text>
+
+        <rect x="240" y="250" width="190" height="120" rx="10" fill="#ffffff" stroke="#8f5fd0" stroke-width="2"/>
+        <text x="335" y="290" text-anchor="middle" font-size="15" font-weight="700" fill="#5b2d8e">C3</text>
+        <text x="335" y="314" text-anchor="middle" font-size="12.5" fill="#1f2430">Tutor + training</text>
+        <text x="335" y="336" text-anchor="middle" font-size="12" fill="#5c6472">n = 20</text>
+
+        <rect x="450" y="250" width="190" height="120" rx="10" fill="#ffffff" stroke="#8f5fd0" stroke-width="2"/>
+        <text x="545" y="290" text-anchor="middle" font-size="15" font-weight="700" fill="#5b2d8e">C4</text>
+        <text x="545" y="314" text-anchor="middle" font-size="12.5" fill="#1f2430">Tutor only</text>
+        <text x="545" y="336" text-anchor="middle" font-size="12" fill="#5c6472">n = 20</text>
+      </g>
+
+      <!-- baseline -->
+      <rect x="240" y="388" width="400" height="34" rx="10" fill="#f6f6f8" stroke="#b9b9c6" stroke-width="1.5" stroke-dasharray="6 4"/>
+      <text x="440" y="410" text-anchor="middle" font-size="13" font-weight="600" fill="#5c6472">C5 · No-AI baseline (text editor only) · n = 20</text>
+    </svg>
+    <figcaption>Figure 1. 2 × 2 between-group factorial design (C1–C4) plus a no-AI baseline group (C5). Participants are randomly assigned, n = 20 per condition.</figcaption>
+  </figure>
+
+  <h2 style="margin-top:36px"><span class="num">Q9</span>Illustrating the experimental procedure</h2>
+  <figure>
+    <svg viewBox="0 0 680 300" width="100%" role="img" aria-label="Experimental procedure flowchart">
+      <defs>
+        <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="#8f5fd0"/>
+        </marker>
+      </defs>
+      <!-- step boxes -->
+      <g font-size="12.5">
+        <rect x="16" y="90" width="112" height="80" rx="10" fill="#efe7f9" stroke="#8f5fd0" stroke-width="1.5"/>
+        <text x="72" y="118" text-anchor="middle" font-weight="700" fill="#3d1c66">Consent &amp;</text>
+        <text x="72" y="136" text-anchor="middle" font-weight="700" fill="#3d1c66">demographics</text>
+        <text x="72" y="156" text-anchor="middle" fill="#5c6472">5 min</text>
+
+        <rect x="156" y="90" width="112" height="80" rx="10" fill="#efe7f9" stroke="#8f5fd0" stroke-width="1.5"/>
+        <text x="212" y="122" text-anchor="middle" font-weight="700" fill="#3d1c66">Pre-test</text>
+        <text x="212" y="142" text-anchor="middle" fill="#5c6472">10 min</text>
+        <text x="212" y="160" text-anchor="middle" fill="#5c6472" font-size="11.5">knowledge &amp; skills</text>
+
+        <rect x="296" y="90" width="112" height="80" rx="10" fill="#efe7f9" stroke="#8f5fd0" stroke-width="1.5"/>
+        <text x="352" y="114" text-anchor="middle" font-weight="700" fill="#3d1c66">Training or</text>
+        <text x="352" y="132" text-anchor="middle" font-weight="700" fill="#3d1c66">filler activity</text>
+        <text x="352" y="152" text-anchor="middle" fill="#5c6472">10 min</text>
+
+        <rect x="436" y="90" width="112" height="80" rx="10" fill="#ffffff" stroke="#5b2d8e" stroke-width="2"/>
+        <text x="492" y="118" text-anchor="middle" font-weight="700" fill="#5b2d8e">Writing task</text>
+        <text x="492" y="138" text-anchor="middle" fill="#5c6472">25 min</text>
+        <text x="492" y="156" text-anchor="middle" fill="#5c6472" font-size="11.5">condition C1–C5</text>
+
+        <rect x="576" y="90" width="92" height="80" rx="10" fill="#efe7f9" stroke="#8f5fd0" stroke-width="1.5"/>
+        <text x="622" y="118" text-anchor="middle" font-weight="700" fill="#3d1c66">Post-</text>
+        <text x="622" y="136" text-anchor="middle" font-weight="700" fill="#3d1c66">surveys</text>
+        <text x="622" y="156" text-anchor="middle" fill="#5c6472">10 min</text>
+      </g>
+      <!-- arrows -->
+      <line x1="128" y1="130" x2="152" y2="130" stroke="#8f5fd0" stroke-width="2" marker-end="url(#arr)"/>
+      <line x1="268" y1="130" x2="292" y2="130" stroke="#8f5fd0" stroke-width="2" marker-end="url(#arr)"/>
+      <line x1="408" y1="130" x2="432" y2="130" stroke="#8f5fd0" stroke-width="2" marker-end="url(#arr)"/>
+      <line x1="548" y1="130" x2="572" y2="130" stroke="#8f5fd0" stroke-width="2" marker-end="url(#arr)"/>
+      <!-- follow-up -->
+      <path d="M 622 170 L 622 232 L 212 232 L 212 176" fill="none" stroke="#b9b9c6" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#arr)"/>
+      <rect x="316" y="212" width="220" height="40" rx="10" fill="#f6f6f8" stroke="#b9b9c6" stroke-width="1.5"/>
+      <text x="426" y="237" text-anchor="middle" font-size="12.5" font-weight="600" fill="#5c6472">+1 week · retention quiz (10 min, online)</text>
+      <!-- session bracket -->
+      <text x="342" y="66" text-anchor="middle" font-size="13" font-weight="600" fill="#8f5fd0">Day 1 · 60-minute lab session</text>
+      <line x1="20" y1="76" x2="664" y2="76" stroke="#e4e1ec" stroke-width="1.5"/>
+    </svg>
+    <figcaption>Figure 2. Experimental procedure: a 60-minute lab session followed by an online retention quiz one week later.</figcaption>
+  </figure>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    AI Integration at XJTLU — group project page. Built with plain HTML/CSS and hosted on GitHub Pages.
+  </div>
+</footer>
+
+</body>
+</html>
